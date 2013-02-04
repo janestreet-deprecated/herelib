@@ -1,0 +1,35 @@
+OASISFormat:      0.3
+OCamlVersion:     >= 4.00.0
+FindlibVersion:   >= 1.3.2
+Name:             herelib
+Version:          109.08.00
+Synopsis:         Syntax extension for inserting the current location.
+Authors:          Jane Street Capital LLC <opensource@janestreet.com>
+Copyrights:       (C) 2013 Jane Street Capital LLC <opensource@janestreet.com>
+Maintainers:      Jane Street Capital LLC <opensource@janestreet.com>
+License:          Apache-2.0
+LicenseFile:      LICENSE.txt
+Homepage:         https://github.com/janestreet/herelib
+Plugins:          StdFiles (0.3), DevFiles (0.3), META (0.3)
+XStdFilesAUTHORS: false
+XStdFilesREADME:  false
+BuildTools:       ocamlbuild, camlp4o
+
+Library herelib
+  Path:               lib
+  Modules:            Here
+  FindlibName:        herelib
+  XMETAType:          library
+
+Library pa_herelib
+  Path:               lib
+  Modules:            Pa_here
+  FindlibParent:      herelib
+  FindlibName:        syntax
+  BuildDepends:       camlp4.lib,
+                      camlp4.quotations,
+                      camlp4.extend
+  CompiledObject:     byte
+  XMETAType:          syntax
+  XMETARequires:      camlp4
+  XMETADescription:   Syntax extension for "_here_"
