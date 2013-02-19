@@ -1,0 +1,19 @@
+# OASIS_START
+# DO NOT EDIT (digest: 750881e9ca5aa92950fff594b884335e)
+version = "109.10.00"
+description = "Syntax extension for inserting the current location."
+archive(byte) = "herelib.cma"
+archive(byte, plugin) = "herelib.cma"
+archive(native) = "herelib.cmxa"
+archive(native, plugin) = "herelib.cmxs"
+exists_if = "herelib.cma"
+package "syntax" (
+ version = "109.10.00"
+ description = "Syntax extension for \"_here_\""
+ requires = "camlp4"
+ archive(syntax, preprocessor) = "pa_herelib.cma"
+ archive(syntax, toploop) = "pa_herelib.cma"
+ exists_if = "pa_herelib.cma"
+)
+# OASIS_STOP
+
