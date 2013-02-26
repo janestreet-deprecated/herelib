@@ -29,7 +29,6 @@ Library pa_herelib
   BuildDepends:       camlp4.lib,
                       camlp4.quotations,
                       camlp4.extend
-  CompiledObject:     byte
   XMETAType:          syntax
   XMETARequires:      camlp4
   XMETADescription:   Syntax extension for "_here_"
