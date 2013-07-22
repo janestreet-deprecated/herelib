@@ -6,7 +6,7 @@ let () =
   "Should be the name of the current directory (when camlp4 is called) relative to the \
    root of the project (use to give better positions)."
 
-let test_lazy _loc  =
+let ast_of_loc _loc : Ast.expr =
   let pos =
     (* when we are given a dirname, we compute the path relative to the root
        when we are not given a dirname, we use the full path *)
@@ -31,11 +31,8 @@ let test_lazy _loc  =
     pos_bol = $int:bol$
   } >>
 
-open Syntax
-
-
 EXTEND Gram
   Syntax.expr: LEVEL "simple" [
-    [ "_here_" -> test_lazy _loc ]
+    [ "_here_" -> ast_of_loc _loc ]
   ];
 END
