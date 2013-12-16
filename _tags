@@ -1,7 +1,7 @@
 # OASIS_START
-# DO NOT EDIT (digest: 703e184503a033abd43095d2ae74d9ce)
-# Ignore VCS directories, you can use the same kind of rule outside 
-# OASIS_START/STOP if you want to exclude directories that contains 
+# DO NOT EDIT (digest: 2943ea50477077a31390a82f42231a56)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
 <**/.svn>: -traverse
 <**/.svn>: not_hygienic
@@ -17,8 +17,8 @@
 "lib/herelib.cmxs": use_herelib
 # Library pa_herelib
 "lib/pa_herelib.cmxs": use_pa_herelib
-<lib/*.ml{,i}>: pkg_camlp4.lib
-<lib/*.ml{,i}>: pkg_camlp4.quotations
-<lib/*.ml{,i}>: pkg_camlp4.extend
+<lib/*.ml{,i}>: package(camlp4.lib)
+<lib/*.ml{,i}>: package(camlp4.quotations)
+<lib/*.ml{,i}>: package(camlp4.extend)
 # OASIS_STOP
 <lib/*.ml{,i}>: syntax_camlp4o
