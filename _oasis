@@ -16,13 +16,13 @@ XStdFilesREADME:  false
 BuildTools:       ocamlbuild, camlp4o
 
 Library herelib
-  Path:               lib
+  Path:               src
   Modules:            Here
   FindlibName:        herelib
   XMETAType:          library
 
 Library pa_herelib
-  Path:               lib
+  Path:               src
   Modules:            Pa_here
   FindlibParent:      herelib
   FindlibName:        syntax
